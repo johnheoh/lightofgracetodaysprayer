@@ -1,19 +1,76 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Light Of Grace today's prayer</title>
-<style>h2{color:#67AB67;}h1{color:#6CAD75;}p{padding: 0; margin: 0; width: 100%;}</style>
-    </head>
-    <body bgcolor="#FACDD8">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Light Of Grace</title>
+<style>
+h2{color:#67AB67;}h1{color:#6CAD75;}
+body {padding: 0; margin: 0; width: 100%;}.img-wrapper {position: relative; width: 100px; height: 100px;}.img-wrapper img {position: absolute; top: 0; left: 0; transform: translate(50, 50); width: 100%; height: 100%; object-fit: cover; margin: auto;}</style></head><body bgcolor="#FACDD8">
         <h1 style="text-align: center;"">
 우리는 항상 기도해야 합니다
             </h1>
         <h2 style="text-align: center;"">
 WE OUGHT ALWAYS TO PRAY
-        </h2>
-<p style="text-align: center;"><img src="http://drive.google.com/uc?export=view&id=19oRhh-Lhrj1Dl692xqpdl2p7tQgZsugk" style=" width : 400px; "> </p>
-</body>
+        </h2><p>
+<div class="img-wrapper">
+
+<img src="http://drive.google.com/uc?export=view&id=19oRhh-Lhrj1Dl692xqpdl2p7tQgZsugk" style=" width : 400px; " frameborder="0"> 
+</div> <!==1행 1열==>
+</p>
+
+    </body>
 </html>
+
+  <h3></h3>
+  <hr>
+  <audio id="audio" src="" controls></audio>
+  <br><br>
+  <select id="select" size="3" onchange="play()">
+    <option value="http://drive.google.com/uc?export=view&id=1MICqF9SZXgrmlTHf92fGii2-C2LQqiP-">So Much Grace</option>
+    <option value="http://drive.google.com/uc?export=view&id=1MEJpyhMh9zMR76jOb9LTK6OLBw44eHwQ">Ani Chofsh</option>
+    <option value="http://drive.google.com/uc?export=view&id=18mUZxL7JKgI7UyUWtA07VAXK01nzvEWN">Count On Me</option>
+  </select>
+  <button id="play" onclick="play()">play</button>
+  <button id="play" onclick="next()">next</button>
+
+  <script>
+    var audio = document.getElementById("audio");
+    var sel = document.getElementById("select");
+    var len = sel.length;
+    var idx = 0;
+    var playon = false;
+    
+    audio.onended = function (e) {
+      next();
+    }
+    
+    function play() {
+      if (sel.selectedIndex < 0) {
+          audio.src = sel.options[idx].value;
+          playon = true;
+      } else {
+          audio.src = sel.options[sel.selectedIndex].value;
+          idx =sel.selectedIndex;
+          playon = true;
+        }
+      audio.play();
+     }
+    
+    
+       function next() {
+      if (sel.selectedIndex < 0) {
+          if (idx + 1 < len) idx++;
+          else idx = 0;
+          
+          if (playon == false) idx = 0;
+          playon = true;
+      } else {
+          idx++;
+          if (idx >= len) idx = 0;
+          playon = true;
+          sel.selectedIndex = idx;
+      }
+      
+      audio.src = sel.options[idx].value;
+      audio.play();
+
+     }
+  </script>
+
+</p></body></html>
