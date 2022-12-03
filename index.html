@@ -6,6 +6,32 @@ form{padding: 0; margin: 0;}
 
 .img-wrapper {position: relative; width: 400px; height: 400px; padding: 0; margin: 0;}
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
 </style></head><body bgcolor="#FACDD8">
 
 <h1 style="text-align: center;"">
@@ -24,14 +50,13 @@ PRAY ALWAYS IN THE SPIRIT</h2>
     <textarea id="content" rows="10" cols="50" placeholder="기도 내용을 입력하세요♥"></textarea>
   </form>
 
-<button onclick="copy_to_clipboard()">클립보드로 복사</button>
+<button class="button button2" onclick="copy_to_clipboard()">카카오톡으로 복사</button>
 
 <script>
 function copy_to_clipboard() {
   var copyText = document.getElementById("content");
   copyText.select();
   document.execCommand("Copy");
- alert( '카카오톡 채팅방에서 붙여넣기 하시면 됩니다♡' );
 }
 </script>
 
