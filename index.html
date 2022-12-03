@@ -1,15 +1,12 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Light Of Grace</title>
 <style>
-h2{color:#29B7F0; margin-top: 2px;}
-h1{color:#286DE6; margin-bottom: 5px;}
+h2{color:#67AB67; margin-top: 2px;}h1{color:#6CAD75; margin-bottom: 5px;}
 body{padding: 0; margin: 0; width: 100%;}
 form{padding: 0; margin: 0;}
 
 .img-wrapper {position: relative; width: 400px; height: 400px; padding: 0; margin: 0;}
-</style>
-</head>
 
-<body bgcolor="#CAE4EF">
+</style></head><body bgcolor="#FACDD8">
 
 <h1 style="text-align: center;"">
 항상 성령 안에서 기도하십시오</h1>
@@ -24,8 +21,20 @@ PRAY ALWAYS IN THE SPIRIT</h2>
 </div>
   <hr>
 <form frameborder="0">
-    <textarea name="content" rows="10" cols="50" placeholder="기도 내용을 입력하세요♥"></textarea>
+    <textarea id="content" rows="10" cols="50" placeholder="기도 내용을 입력하세요♥"></textarea>
   </form>
+
+<button onclick="copy_to_clipboard()">클립보드로 복사</button>
+
+<script>
+function copy_to_clipboard() {
+  var copyText = document.getElementById("content");
+  copyText.select();
+  document.execCommand("Copy");
+  console.log('Copied!');
+}
+</script>
+
   <hr>
   <audio id="audio" src="" controls></audio>
   <br><br>
